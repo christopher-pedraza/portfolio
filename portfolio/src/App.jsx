@@ -1,6 +1,6 @@
 import "./App.css";
 
-import Title from "./components/title/title";
+import Title from "./components/Title/Title";
 
 function App() {
     return (
