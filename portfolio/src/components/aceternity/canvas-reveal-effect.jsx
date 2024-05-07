@@ -5,12 +5,13 @@ import * as THREE from "three";
 import propTypes from "prop-types";
 
 export const CanvasRevealEffect = ({
-    animationSpeed = 0.4,
+    animationSpeed = 3,
     opacities = [0.3, 0.3, 0.3, 0.5, 0.5, 0.5, 0.8, 0.8, 0.8, 1],
     colors = [[0, 255, 255]],
     containerClassName,
     dotSize,
     showGradient = true,
+    bgColor = "black",
 }) => {
     return (
         <div
@@ -18,6 +19,7 @@ export const CanvasRevealEffect = ({
                 "h-full relative bg-white w-full",
                 containerClassName
             )}
+            style={{ backgroundColor: bgColor }}
         >
             <div className="h-full w-full">
                 <DotMatrix
@@ -51,6 +53,7 @@ CanvasRevealEffect.propTypes = {
     containerClassName: propTypes.string,
     dotSize: propTypes.number,
     showGradient: propTypes.bool,
+    bgColor: propTypes.string,
 };
 
 const DotMatrix = ({
